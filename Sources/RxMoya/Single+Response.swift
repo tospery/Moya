@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 #if !COCOAPODS
-    import Moya
+    import Moya_JX
 #endif
 
 #if canImport(UIKit)

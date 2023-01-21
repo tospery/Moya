@@ -19,7 +19,7 @@ extension NetworkLoggerPlugin: PluginType {
         }
     }
 
-    public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
+    public func didReceive(_ result: Result<Moya_JX.Response, MoyaError>, target: TargetType) {
         switch result {
         case .success(let response):
             configuration.output(target, logNetworkResponse(response, target: target, isFromError: false))
@@ -85,16 +85,19 @@ private extension NetworkLoggerPlugin {
         // Adding log entries for each given log option
         var output = [String]()
 
+        var responseBody = (isFromError && configuration.logOptions.contains(.errorResponseBody))
+        || configuration.logOptions.contains(.successResponseBody)
+		
         //Response presence check
         if let httpResponse = response.response {
-            output.append(configuration.formatter.entry("Response", httpResponse.description, target))
+			if !responseBody {
+				output.append(configuration.formatter.entry("Response", httpResponse.description, target))
+			}
         } else {
             output.append(configuration.formatter.entry("Response", "Received empty network response for \(target).", target))
         }
 
-        if (isFromError && configuration.logOptions.contains(.errorResponseBody))
-            || configuration.logOptions.contains(.successResponseBody) {
-
+        if responseBody {
             let stringOutput = configuration.formatter.responseData(response.data)
             output.append(configuration.formatter.entry("Response Body", stringOutput, target))
         }
