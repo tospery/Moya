@@ -2,7 +2,7 @@
 
 import Foundation
 import Combine
-import Moya
+import Moya_Hi
 
 #if canImport(UIKit)
     import UIKit.UIImage

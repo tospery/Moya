@@ -1,7 +1,7 @@
 #if canImport(Combine)
 
 import Combine
-import Moya
+import Moya_Hi
 
 // This should be already provided in Combine, but it's not.
 // Ideally we would like to remove it, in favor of a framework-provided solution, ASAP.
