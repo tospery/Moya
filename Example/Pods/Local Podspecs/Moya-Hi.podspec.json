@@ -1,0 +1,53 @@
+{
+  "name": "Moya-Hi",
+  "version": "15.0.0-v1",
+  "summary": "Network abstraction layer written in Swift",
+  "description": "Moya abstracts network commands using Swift Generics to provide developers\nwith more compile-time confidence.\n\nReactiveSwift and RxSwift extensions exist as well. Instructions for installation\nare in [the README](https://github.com/tospery/Moya).",
+  "homepage": "https://github.com/tospery/Moya",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "YangJianxiang": "tospery@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/tospery/Moya.git",
+    "tag": "15.0.0-v1"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "Moya-Hi/**/*",
+  "requires_arc": true,
+  "swift_versions": "5.0",
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": [
+        "Moya-Hi/Moya/",
+        "Moya-Hi/Moya/Plugins/"
+      ],
+      "dependencies": {
+        "Alamofire": [
+          "~> 5.0"
+        ]
+      },
+      "frameworks": "Foundation"
+    },
+    {
+      "name": "RxSwift",
+      "source_files": "Moya-Hi/RxMoya/",
+      "dependencies": {
+        "Moya-Hi/Core": [
+
+        ],
+        "RxSwift": [
+          "~> 6.0"
+        ]
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}

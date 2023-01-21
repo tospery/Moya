@@ -1,0 +1,6 @@
+framework module Moya_Hi {
+  umbrella header "Moya-Hi-umbrella.h"
+
+  export *
+  module * { export * }
+}
