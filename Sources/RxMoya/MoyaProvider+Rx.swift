@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 #if !COCOAPODS
-import Moya_JX
+import Moya_Hi
 #endif
 
 extension MoyaProvider: ReactiveCompatible {}

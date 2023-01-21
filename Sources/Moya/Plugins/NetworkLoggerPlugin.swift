@@ -19,7 +19,7 @@ extension NetworkLoggerPlugin: PluginType {
         }
     }
 
-    public func didReceive(_ result: Result<Moya_JX.Response, MoyaError>, target: TargetType) {
+    public func didReceive(_ result: Result<Moya_Hi.Response, MoyaError>, target: TargetType) {
         switch result {
         case .success(let response):
             configuration.output(target, logNetworkResponse(response, target: target, isFromError: false))

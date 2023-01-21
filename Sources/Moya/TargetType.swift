@@ -10,7 +10,7 @@ public protocol TargetType {
     var path: String { get }
 
     /// The HTTP method used in the request.
-    var method: Moya_JX.Method { get }
+    var method: Moya_Hi.Method { get }
 
     /// Provides stub data for use in testing. Default is `Data()`.
     var sampleData: Data { get }

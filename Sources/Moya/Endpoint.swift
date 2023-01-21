@@ -27,7 +27,7 @@ open class Endpoint {
     public let sampleResponseClosure: SampleResponseClosure
 
     /// The HTTP method for the request.
-    public let method: Moya_JX.Method
+    public let method: Moya_Hi.Method
 
     /// The `Task` for the request.
     public let task: Task
@@ -37,7 +37,7 @@ open class Endpoint {
 
     public init(url: String,
                 sampleResponseClosure: @escaping SampleResponseClosure,
-                method: Moya_JX.Method,
+                method: Moya_Hi.Method,
                 task: Task,
                 httpHeaderFields: [String: String]?) {
 
